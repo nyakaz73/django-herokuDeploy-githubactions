@@ -10,14 +10,14 @@ jobs:
         steps:
           - name: Checkout
             uses: actions/checkout@v2
-          - name: Check user if logged in action step
-            uses: nyakaz73/heroku-django-deploy@v0.11 #Uses an action in the root directory
-            id: login 
+          - name: Deploy django to heroku
+            uses: nyakaz73/heroku-django-deploy@v0.27 #Uses an action in the root directory
+            id: deploy 
             with: 
               heroku_app_name : ${{ secrets.HEROKU_APP_NAME }}
               heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
               heroku_email_address: 'tafadzwalnyamukapa@gmail.com'
-              want_to_login: true
+              
           #Use the output  from the hello step
           - name: Get the output status
-            run: echo "${{ steps.login.outputs.status }}"
+            run: echo "${{ steps.deploy.outputs.status }}"
