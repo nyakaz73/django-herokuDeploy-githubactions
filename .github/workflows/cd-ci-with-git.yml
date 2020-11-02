@@ -11,7 +11,7 @@ jobs:
           - name: Checkout
             uses: actions/checkout@v2
           - name: Check user if logged in action step
-            uses: nyakaz73/heroku-django-deploy@v0.1 #Uses an action in the root directory
+            uses: nyakaz73/heroku-django-deploy@v0.11 #Uses an action in the root directory
             id: login 
             with: 
               heroku_app_name : ${{ secrets.HEROKU_APP_NAME }}
