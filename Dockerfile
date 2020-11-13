@@ -47,4 +47,4 @@ RUN adduser -D myuser
 USER myuser
 
 # run gunicorn  Gunicorn 'Green Unicorn' is a Python WSGI HTTP Server for UNIX. It's a pre-fork worker model. 
-CMD gunicorn news_feed.wsgi:application --bind 0.0.0.0:$PORT
+CMD gunicorn djangoherokuapp.wsgi:application --bind 0.0.0.0:$PORT
